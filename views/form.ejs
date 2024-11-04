@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+    <style>
+      body {
+        display: grid;
+        place-items: center;
+        height: 100vh;
+      }
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+        border: 1px solid black;
+        padding: 8px 5px;
+        /* justify-content: center;
+        align-items: center; */
+      }
+      input {
+        margin: 10px 2px;
+      }
+
+      .button {
+        width: 100px;
+        place-self: center;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/new" method="POST">
+      <label for="user">Name</label>
+      <input name="user" type="text" placeholder="username..." />
+
+      <% if(locals.alert){ alert.forEach((item)=>{ %>
+      <p><%= item.msg %></p>
+      <% }) } %>
+
+      <label for="mesageText">message</label>
+      <input
+        name="messageText"
+        type="text"
+        placeholder="type your message..."
+      />
+      <button type="submit" class="button">send</button>
+    </form>
+  </body>
+</html>

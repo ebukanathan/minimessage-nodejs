@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: grid;
+        place-items: center;
+      }
+      .heading {
+        width: 100%;
+        position: sticky;
+        top: 0;
+        background-color: rgb(1, 95, 79);
+        place-items: center;
+        padding: 3px 0px;
+        margin-bottom: 5px;
+      }
+      .message-card {
+        width: 400px;
+        border-radius: 5px;
+        border: 1px solid rgb(1, 95, 79);
+        border-right: 5px solid rgb(1, 95, 79);
+        display: flex;
+        flex-direction: column;
+        margin: 5px 0px;
+        padding: 3px 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heading">
+      <h1>Messages</h1>
+      <a type="button" href="/new">add message</a>
+    </div>
+
+    <% if (locals.user){ user.forEach((item)=>{ %>
+    <div class="message-card">
+      <p><%= item.text %></p>
+      <div class="">
+        <h4><%= item.user %></h4>
+        <p><%= item.added %></p>
+      </div>
+    </div>
+    <% })} %>
+  </body>
+</html>
